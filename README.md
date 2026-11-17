@@ -1,8 +1,10 @@
-# EPX-didaktik
+# Fagdidaktik teknikfag
 
 Enkel SvelteKit-side til at samle noter og designe en interaktion. Layout og CMS er taget fra `Informatik-C-2026` (Tiptap + Firestore, ejer kan redigere når han er logget ind).
 
-Der er ingen remote og intet hosting-site endnu.
+Repo: https://github.com/simmoe/fagdidaktik-teknikfag
+
+Der er intet hosting-site endnu.
 
 ## Sider
 
@@ -25,33 +27,33 @@ Log ind med `simmoe@gmail.com` for at redigere noter. Knappen «Redigér side» 
 
 Delt projekt `p5-firebase-eebc1`. Denne app bruger kun:
 
-- Firestore-collection `epx_didaktik_pages`
-- Storage-prefix `epx_didaktik_cms/`
+- Firestore-collection `fagdidaktik_teknikfag_pages`
+- Storage-prefix `fagdidaktik_teknikfag_cms/`
 
 Regler er ikke deployet. Læsning og skrivning fejler, indtil et fragment er flettet ind i de **live** regler. Indtil da vises fallback-teksten. Deploy aldrig `firestore.rules` herfra. Hent live rules, flet, vis diff, og deploy kun efter eksplicit OK. Et hosting-deploy er ikke et rules-deploy.
 
 ```
-function isEpxDidaktikOwner() {
+function isFagdidaktikTeknikfagOwner() {
   return signedIn()
     && request.auth.token.email_verified == true
     && request.auth.token.email == 'simmoe@gmail.com';
 }
 
-match /epx_didaktik_pages/{id} {
+match /fagdidaktik_teknikfag_pages/{id} {
   allow read: if true;
-  allow create, update: if isEpxDidaktikOwner()
+  allow create, update: if isFagdidaktikTeknikfagOwner()
     && id.matches('^[A-Za-z0-9._:-]{1,120}$')
     && request.resource.data.keys().hasOnly(['content', 'updatedAt'])
     && request.resource.data.content is map
     && request.resource.data.content.version == 1
     && request.resource.data.content.kind == 'content'
     && request.resource.data.updatedAt == request.time;
-  allow delete: if isEpxDidaktikOwner();
+  allow delete: if isFagdidaktikTeknikfagOwner();
 }
 ```
 
-`signedIn()` skal være den funktion, der allerede findes i live rules. Storage-regler for `epx_didaktik_cms/` skal med i samme fletning, ellers kan billeder ikke uploades.
+`signedIn()` skal være den funktion, der allerede findes i live rules. Storage-regler for `fagdidaktik_teknikfag_cms/` skal med i samme fletning, ellers kan billeder ikke uploades.
 
 ## Næste agent
 
-Åbn mappen `/Users/simo/Documents/github/epx-didaktik`. Noter samles på CMS-siden. Interaktionen kodes i `src/routes/interaktion/+page.svelte`. Rør ikke Informatik C-collections (`informatik_c_2026_*`).
+Åbn mappen `/Users/simo/Documents/github/fagdidaktik-teknikfag`. Noter samles på CMS-siden. Interaktionen kodes i `src/routes/interaktion/+page.svelte`. Rør ikke Informatik C-collections (`informatik_c_2026_*`).

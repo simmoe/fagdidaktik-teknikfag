@@ -1,9 +1,9 @@
 {
-	"name": "epx-didaktik",
+	"name": "fagdidaktik-teknikfag",
 	"private": true,
 	"version": "0.1.0",
 	"type": "module",
-	"description": "Noter og interaktion til en praksisfunderet didaktik for epx.",
+	"description": "Noter og interaktion til fagdidaktik i teknikfag.",
 	"scripts": {
 		"dev": "vite dev",
 		"build": "vite build",

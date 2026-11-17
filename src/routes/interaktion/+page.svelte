@@ -1,5 +1,5 @@
 <svelte:head>
-	<title>Interaktion — EPX</title>
+	<title>Interaktion — Fagdidaktik</title>
 </svelte:head>
 
 <section class="stage" aria-label="Interaktion">

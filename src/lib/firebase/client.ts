@@ -13,7 +13,7 @@ import { firebaseConfig } from './config';
 /**
  * Offentlig Firebase-webkonfiguration.
  * Projekt: `p5-firebase-eebc1` (delt).
- * Collection: `epx_didaktik_pages`.
+ * Collection: `fagdidaktik_teknikfag_pages`.
  */
 let _app: FirebaseApp | undefined;
 let _auth: Auth | undefined;
@@ -54,7 +54,7 @@ export function getFirebaseStorage(): FirebaseStorage {
 }
 
 export const COL = {
-	pages: 'epx_didaktik_pages'
+	pages: 'fagdidaktik_teknikfag_pages'
 } as const;
 
 export const OWNER_EMAIL = 'simmoe@gmail.com';

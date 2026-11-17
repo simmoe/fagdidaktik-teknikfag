@@ -9,7 +9,7 @@ const ARTIKEL =
 export const noterFallback: CmsContentPage = {
 	version: 1,
 	kind: 'content',
-	eyebrow: 'EPX',
+	eyebrow: 'Fagdidaktik',
 	title: 'Noter',
 	blocks: [
 		{

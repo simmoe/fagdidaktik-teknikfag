@@ -62,14 +62,14 @@ export async function uploadCmsImage(
 	}
 	if (file.size > CMS_IMAGE_MAX_BYTES) throw new Error('Billedet er for stort (max 12 MB).');
 
-	const path = `epx_didaktik_cms/${pageId}/${blockId}.${imageExt(file)}`;
+	const path = `fagdidaktik_teknikfag_cms/${pageId}/${blockId}.${imageExt(file)}`;
 	const fileRef = ref(getFirebaseStorage(), path);
 	await uploadBytes(fileRef, file, { contentType: file.type });
 	return { src: await getDownloadURL(fileRef), path };
 }
 
 export async function removeCmsImage(path: string): Promise<void> {
-	if (!authState.isOwner || !path.startsWith('epx_didaktik_cms/')) return;
+	if (!authState.isOwner || !path.startsWith('fagdidaktik_teknikfag_cms/')) return;
 	try {
 		await deleteObject(ref(getFirebaseStorage(), path));
 	} catch {

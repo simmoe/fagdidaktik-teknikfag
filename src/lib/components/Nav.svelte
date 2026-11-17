@@ -60,9 +60,9 @@
 	<div class="flex items-center justify-between gap-4 px-6 py-5 md:px-8 md:pt-10 md:pb-8">
 		<a href="/noter" class="block min-w-0">
 			<span class="block text-[0.6875rem] font-medium tracking-[0.18em] uppercase text-ink-faint">
-				EPX
+				Fagdidaktik
 			</span>
-			<span class="mt-1 block text-xl font-light tracking-tight text-ink">Didaktik</span>
+			<span class="mt-1 block text-xl font-light tracking-tight text-ink">Teknikfag</span>
 		</a>
 
 		<button

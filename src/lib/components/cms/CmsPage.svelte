@@ -54,7 +54,7 @@
 </script>
 
 <svelte:head>
-	<title>{content.title} — EPX</title>
+	<title>{content.title} — Fagdidaktik</title>
 </svelte:head>
 
 <div class="space-y-10">
