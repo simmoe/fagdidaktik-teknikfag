@@ -1,0 +1,15 @@
+.DS_Store
+node_modules
+/build
+/.firebase
+/.svelte-kit
+/package
+.env
+.env.*
+!.env.example
+firebase-debug.log
+*.log
+vite.config.js.timestamp-*
+vite.config.ts.timestamp-*
+p5.js kode/**/p5.js
+p5.js kode/**/p5.sound.min.js
