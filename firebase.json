@@ -1,0 +1,37 @@
+{
+	"hosting": {
+		"site": "fagdidaktik-teknikfag",
+		"predeploy": [
+			"node $HOME/Documents/Git/cursor-global-setup/scripts/require-published-deploy.mjs --repo fagdidaktik-teknikfag --live https://fagdidaktik-teknikfag.web.app/deployed.json --out build/deployed.json"
+		],
+		"public": "build",
+		"ignore": ["firebase.json", "**/.*", "**/node_modules/**"],
+		"rewrites": [
+			{
+				"source": "**",
+				"destination": "/index.html"
+			}
+		],
+		"headers": [
+			{
+				"source": "**",
+				"headers": [
+					{ "key": "Cache-Control", "value": "no-cache" },
+					{ "key": "Cross-Origin-Opener-Policy", "value": "same-origin-allow-popups" }
+				]
+			},
+			{
+				"source": "/deployed.json",
+				"headers": [{ "key": "Cache-Control", "value": "no-cache" }]
+			},
+			{
+				"source": "**/*.@(js|css|svg|woff2)",
+				"headers": [{ "key": "Cache-Control", "value": "public, max-age=31536000, immutable" }]
+			},
+			{
+				"source": "**/*.html",
+				"headers": [{ "key": "Cache-Control", "value": "no-cache" }]
+			}
+		]
+	}
+}

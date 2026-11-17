@@ -4,7 +4,7 @@ Enkel SvelteKit-side til at samle noter og designe en interaktion. Layout og CMS
 
 Repo: https://github.com/simmoe/fagdidaktik-teknikfag
 
-Der er intet hosting-site endnu.
+Live: https://fagdidaktik-teknikfag.web.app
 
 ## Sider
 
@@ -20,6 +20,12 @@ npm run dev
 ```
 
 http://localhost:5177
+
+```bash
+npm run deploy
+```
+
+Deployer kun hosting til https://fagdidaktik-teknikfag.web.app. `firebase.json` har ingen `firestore.rules`, så et deploy herfra ikke kan overskrive de delte regler.
 
 Log ind med `simmoe@gmail.com` for at redigere noter. Knappen «Redigér side» vises kun for ejeren.
 
