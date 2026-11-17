@@ -36,7 +36,7 @@ Delt projekt `p5-firebase-eebc1`. Denne app bruger kun:
 - Firestore-collection `fagdidaktik_teknikfag_pages`
 - Storage-prefix `fagdidaktik_teknikfag_cms/`
 
-Regler er ikke deployet. Læsning og skrivning fejler, indtil et fragment er flettet ind i de **live** regler. Indtil da vises fallback-teksten. Deploy aldrig `firestore.rules` herfra. Hent live rules, flet, vis diff, og deploy kun efter eksplicit OK. Et hosting-deploy er ikke et rules-deploy.
+Reglerne er flettet ind i de live regler (november 2026): offentlig læsning, skrivning kun for `simmoe@gmail.com`. Dette repo har ingen `firestore.rules`. Deploy aldrig et regelsæt herfra. Et hosting-deploy er ikke et rules-deploy. Skal reglerne ændres: hent live, flet, vis diff, og deploy kun efter eksplicit OK.
 
 ```
 function isFagdidaktikTeknikfagOwner() {
